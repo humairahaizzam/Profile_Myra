@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Profile Myra </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            list-style: none;
+            text-decoration: none;
+            font-family: 'Poppins';
+            scroll-behavior: smooth;
+        }
+
+        body {
+            overflow-x: hidden;
+            background-color: #7F6244;
+        }
+
+        header {
+			width: 100%;
+            padding: 1.5px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            height: 70px;
+            padding: 0 3%;
+            border-radius: 50px;
+            border: 4px solid #3D2B1F;
+            position: fixed;
+            top: 3%;
+            left: 10%;
+            background-color: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(5px);
+            z-index: 100;
+        }
+
+        .logo img {
+            width: 100px;
+            height: auto;
+        }
+
+        img {
+			width: 100%;
+			height: 100%;
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 5% 12%;
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+        }
+
+        .menu li a {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #7F6244;
+            transition: 0.3s;
+        }
+
+        .menu li a:hover {
+            color: white;
+        }
+
+        .bars {
+            display: none;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        .my_header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5% 12%;
+            gap: 40px;
+            height: 90vh;
+            position: relative;
+            z-index: 1;
+        }
+
+        .my_shape1,
+        .my_shape2 {
+            position: absolute;
+            z-index: -1;
+            width: 35%;
+            height: 70%;
+            transform: translate(-50%, -50%);
+        }
+
+        .my_shape1 {
+            top: 58.5%;
+            left: 37%;
+            height: 75%;
+        }
+
+        .my_shape2 {
+            top: 50%;
+            left: 63%;
+        }
+
+        .my_img {
+            top: 12%;
+            left: 23%;
+            width: -50%;
+            height: 90%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .my_img img {
+            width: 250%;
+        }
+
+        .my_content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 10px;
+            margin-top: -30px;
+            margin-left: 550px;
+        }
+
+        .my_content h1 {
+            font-size: 4rem;
+            line-height: 5rem;
+            color: white;
+        }
+
+        .my_content h2 {
+            font-size: 3rem;
+            color: #EFDECD;
+            font-weight: 700;
+        }
+
+        .my_content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #EFDECD;
+        }
+
+        .my_content i {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #EFDECD;
+        }
+
+        .top_text,
+        .bottom_text {
+            position: absolute;
+            font-size: 8rem;
+            font-weight: 500;
+            -webkit-text-stroke: 1px #a5a2a2;
+            -webkit-background-clip: text;
+            color: transparent;
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        .top_text {
+            top: 8%;
+            left: 8%;
+        }
+
+        .bottom_text {
+            top: 80%;
+            left: 60%;
+        }
+
+        .footer {
+            background-color: #3D2B1F;
+            padding: 1% 12%;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 12%;
+            margin-top: auto;
+        }
+
+        .footer p {
+            color: white;
+            font-size: 1rem;
+        }
+
+        .footer p span {
+            font-weight: 600;
+            color: #C3B091;
+        }
+
+        .sound {
+            display: none;
+        }
+
+        .social_icons {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .social_icons i {
+            color: white;
+            font-size: 2rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid white;
+            display: flex;
+            align-items: center;
+            transition: 1.5s;
+        }
+
+        .social_icons i:hover {
+            background-color: #7F6244;
+            color: black;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem;
+            }
+
+            .menu {
+                flex-direction: column;
+                width: 100%;
+                display: none;
+            }
+
+            .bars {
+                display: block;
+            }
+
+            .my_content {
+                margin-left: 0;
+                align-items: center;
+                text-align: center;
+            }
+
+            .my_content h1 {
+                font-size: 3rem;
+                line-height: 4rem;
+            }
+
+            .my_content h2 {
+                font-size: 2.5rem;
+            }
+
+            .my_content h3 {
+                font-size: 1.2rem;
+            }
+
+            .top_text,
+            .bottom_text {
+                font-size: 5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+			.logo img {
+                width: 80px;
+            }
+
+            nav {
+                width: 90%;
+                left: 5%;
+            }
+			
+            .my_content h1 {
+                font-size: 2rem;
+                line-height: 2.5rem;
+            }
+
+            .my_content h2 {
+                font-size: 2rem;
+            }
+
+            .my_content h3 {
+                font-size: 1rem;
+            }
+
+            .top_text,
+            .bottom_text {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+	<header>
+		<nav>
+			<div class = "logo">
+				<img src = "images/logo.png" alt = "logo">
+			</div>
+			
+			<ul class = "menu">
+				<li><a href = "index.html"> Home </a></li>
+				<li><a href = "about_me.html"> About Me </a></li>
+				<li><a href = "education.html"> Education </a></li>
+				<li><a href = "inspiration.html"> Inspiration </a></li>
+				<li><a href = "gallery.html"> My Gallery </a></li>
+			</ul>
+			
+			<div class = "bars">
+				<i class = "ri-menu-2-fill"></i>
+			</div>
+		</nav>
+		
+		<div class = "my_header">
+			<img src = "images/circleshape2.png" class = "my_shape2" alt = "Circle Shape 2">
+			<img src = "images/circleshape1.png" class = "my_shape1" alt = "Circle Shape 1">
+			
+			<div class = "my_img">
+				<img src = "images/my1.png" alt = "My Image">
+			</div>
+			
+			<div class = "my_content">
+				<h2> Hello, I am </h2>
+				<h1>&nbsp; &nbsp; Nur Batrisyia </h1>
+				<h1>&nbsp; &nbsp; &nbsp; Humaira </h1>
+				<h3>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Student of Information Management </h3>	
+				<i>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "Let’s uncover the story behind the smile." </i>
+			</div>
+			
+			<div class = "top_text"> Humaira </div>
+			<div class = "bottom_text"> Haizzam </div>
+			
+		</div>
+	</header>
+
+	<section class = "footer">
+		<p> &copy; Copyright 2024. All Rights Reserved By <span> MyraHaizzam </span></p>
+		
+		<div class = "sound">
+			<audio controls autoplay loop>
+			<source src = "songs/song.mp3" type = "audio/mpeg"></audio>
+		</div>
+		
+		<div class = "social_icons">
+			<a href="https://www.instagram.com/airahzm"><i class = "ri-instagram-fill"></i></a>
+			<a href="https://www.youtube.com/@mylawra"><i class = "ri-youtube-fill"></i></a>
+			<a href="https://wa.link/lf03sr"><i class = "ri-whatsapp-fill"></i></a>
+		</div>
+	</section>
+	
+	<script>
+        const bars = document.querySelector('.bars');
+        const menu = document.querySelector('.menu');
+
+        bars.addEventListener('click', () => {
+            menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+
+</body>
+
+</html>
