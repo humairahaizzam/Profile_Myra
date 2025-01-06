@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> About Me </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+    <script src="https://kit.fontawesome.com/44f557ccce.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            list-style: none;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            overflow-x: hidden;
+            background-color: #7F6244;
+        }
+
+        header {
+            width: 100%;
+            padding: 80px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            height: 70px;
+            padding: 0 3%;
+            border-radius: 50px;
+            border: 4px solid #3D2B1F;
+            position: fixed;
+            top: 3%;
+            left: 10%;
+            background-color: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(5px);
+            z-index: 100;
+        }
+
+        .logo img {
+            width: 100px;
+            height: auto;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+        }
+
+        .menu li a {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #7F6244;
+            transition: 0.3s;
+        }
+
+        .menu li a:hover {
+            color: white;
+        }
+
+        .bars {
+            display: none;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        .content {
+            width: 100%;
+            text-align: center;
+        }
+
+        .content h1 {
+            font-weight: bold;
+            font-size: 40px;
+            top: 1%;
+            position: relative;
+            margin: 40px 0;
+            color: #3D2B1F;
+            background-color: transparent;
+        }
+
+        .content h1::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 3px;
+            background-color: #EFDECD;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: animate 3s linear infinite;
+        }
+
+        @keyframes animate {
+            0% {
+                width: 10px;
+            }
+
+            50% {
+                width: 380px;
+            }
+
+            100% {
+                width: 10px;
+            }
+        }
+
+        section {
+            height: 75vh;
+            display: flex;
+            margin: 25px;
+            padding: 25px;
+            border-radius: 2rem;
+            background: #3D2B1F;
+        }
+
+        .row .video-container video {
+            width: 40%;
+            position: absolute;
+            left: 150px;
+            top: 30%;
+            transform: translateY(0%);
+            border: 1.5rem solid #7F6244;
+            border-radius: 2rem;
+            box-shadow: 0.5rem 1rem rgba(0, 0, 0, .1);
+            height: 60%;
+            object-fit: cover;
+        }
+
+        .row .video-container h3 {
+            position: absolute;
+            left: 150px;
+            top: 55%;
+            transform: translateY(0%);
+            font-size: 3rem;
+            background: #7F6244;
+            color: #3D2B1F;
+            width: 40%;
+            padding: 1rem 2rem;
+            text-align: center;
+            mix-blend-mode: normal;
+        }
+
+        .content1 {
+            position: absolute;
+            width: 100%;
+            display: grid;
+            top: 270px;
+            left: 55%;
+            grid-template-columns: repeat(3, 1fr);
+            place-content: center;
+            place-items: center;
+            gap: 20px;
+        }
+
+        .about-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .about-left h1 {
+            color: white;
+            font-size: 2rem;
+            line-height: 3.5rem;
+            font-weight: 600;
+        }
+
+        .about-left p {
+            color: white;
+            font-size: 1.1rem;
+            line-height: 1.8rem;
+            font-weight: 500;
+        }
+
+        .about-left h3 {
+            color: #7F6244;
+            font-size: 1.3rem;
+            line-height: 2rem;
+            font-weight: 500;
+        }
+
+        .about-left img {
+            position: relative;
+            left: 20px;
+            bottom: 6px;
+            width: 70px;
+            height: 70px;
+        }
+
+        .button li a {
+            position: relative;
+            display: flex;
+            padding: 10px 20px;
+            align-items: center;
+            gap: 20px;
+            top: 10px;
+            font-size: 1rem;
+            font-weight: 500;
+            color: white;
+            cursor: pointer;
+            transition: .3s;
+            border-radius: 12px;
+            background: #7F6244;
+            border: 3px solid white;
+        }
+
+        .button li a:hover {
+            color: #3D2B1F;
+            background-color: white;
+        }
+
+        .section2 {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section2 h1 {
+            position: absolute;
+            left: 0;
+            top: 42%;
+            transform: translateY(0%);
+            font-size: 2rem;
+            background: #7F6244;
+            color: white;
+            width: 100%;
+            padding: 1rem 2rem;
+            text-align: center;
+            mix-blend-mode: normal;
+        }
+
+        .section2 h3 {
+            position: absolute;
+            left: 400px;
+            top: 102%;
+            transform: translateY(0%);
+            font-size: 3rem;
+            color: #7F6244;
+            width: 60%;
+            padding: 0.5rem 1rem;
+            text-align: center;
+            mix-blend-mode: normal;
+        }
+
+        .slideshow-container {
+            border: 1.2rem solid #7F6244;
+            border-radius: 4.5rem;
+            max-width: 1000px;
+            position: relative;
+            top: 2%;
+            right: -3.5%;
+            margin: auto;
+        }
+
+        .slideshow-container img {
+            border-radius: 50px;
+            height: 75%;
+            width: 100%;
+            opacity: 0.4;
+        }
+
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 47.5%;
+            width: auto;
+            margin-top: -22px;
+            padding: 20px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: #3D2B1F;
+        }
+
+        .text {
+            color: #f2f2f2;
+            font-size: 19px;
+            padding: 12px 12px;
+            position: absolute;
+            bottom: 19px;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            text-align: center;
+        }
+
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+            left: 2%;
+        }
+
+        .dot {
+            position: relative;
+            top: 325px;
+            right: 860%;
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: white;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active,
+        .dot:hover {
+            background-color: #7F6244;
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .section2 .btn {
+            position: absolute;
+            padding: 10px 40px;
+            color: white;
+            cursor: pointer;
+            top: 103%;
+            left: 84.5%;
+            border-radius: 12px;
+            background: #7F6244;
+            border: 3px solid white;
+        }
+
+        .section2 .btn:hover {
+            color: #3D2B1F;
+            background-color: white;
+        }
+
+        .row .image-container3 img {
+            width: 40%;
+            position: absolute;
+            left: 150px;
+            top: 192%;
+            transform: translateY(0%);
+            border: 1.5rem solid #7F6244;
+            border-radius: 2rem;
+            box-shadow: 0.5rem 1rem rgba(0, 0, 0, .1);
+            height: 60%;
+            object-fit: cover;
+        }
+
+        .row .image-container3 h3 {
+            position: absolute;
+            left: 150px;
+            top: 215%;
+            transform: translateY(0%);
+            color: #3D2B1F;
+            font-size: 3rem;
+            background: #7F6244;
+            width: 40%;
+            padding: 1rem 2rem;
+            text-align: center;
+            mix-blend-mode: normal;
+        }
+
+        .skills-section {
+            position: absolute;
+            margin: auto;
+            padding: 50%;
+            right: 150px;
+            top: 195%;
+            background: white;
+            box-shadow: 4px 4px 6px 4px rgba(245, 245, 245);
+            border-radius: 12px;
+            padding: 2rem;
+            font-size: 1.2rem;
+            width: 90%;
+            max-width: 800px;
+        }
+
+        .what {
+            margin: .75rem 0 .1rem .75rem;
+            color: #7F6244;
+            font-weight: bolder;
+        }
+
+        .skill-container {
+            background-color: #d3d3d3;
+            border-radius: 1rem;
+            height: 35px;
+        }
+
+        .skill {
+            background: #7F6244;
+            height: 100%;
+            font-size: 1.25rem;
+            border-radius: 1rem;
+            display: flex;
+            color: white;
+        }
+
+        .skill-container span {
+            margin: auto;
+        }
+
+        .s1 {
+            width: 65%;
+        }
+
+        .s2 {
+            width: 70%;
+        }
+
+        .s3 {
+            width: 85%;
+        }
+
+        .s4 {
+            width: 80%;
+        }
+
+        .s5 {
+            width: 50%;
+        }
+
+        .s6 {
+            width: 60.7%;
+        }
+
+        .load {
+            animation: loading 1s linear;
+        }
+
+        .section3 .btn {
+            position: relative;
+            padding: 10px 40px;
+            color: white;
+            cursor: pointer;
+            top: 1000%;
+            left: 980%;
+            border-radius: 12px;
+            background: #7F6244;
+            border: 3px solid white;
+        }
+
+        .section3 .btn:hover {
+            color: #3D2B1F;
+            background-color: white;
+        }
+
+        .rev-section {
+            margin: auto;
+            padding: 0 1rem;
+            max-width: 1100px;
+            text-align: center;
+        }
+
+        .glow {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            color: rgb(50, 50, 50);
+            margin-top: 4rem;
+            margin-bottom: .5rem;
+            animation: glow 1s ease-in-out infinite alternate;
+        }
+
+        @-webkit-keyframes glow {
+            from {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #644117, 0 0 40px #644117, 0 0 50px #644117, 0 0 60px #644117, 0 0 70px #644117;
+            }
+
+            to {
+                text-shadow: 0 0 20px #fff, 0 0 30px #ffe4c4, 0 0 40px #ffe4c4, 0 0 50px #ffe4c4, 0 0 60px #ffe4c4, 0 0 70px #ffe4c4, 0 0 80px #ffe4c4;
+            }
+        }
+
+        .note {
+            font-size: 1.1rem;
+            color: rgb(150, 150, 150);
+            font-style: italic;
+            color: white;
+        }
+
+        .reviews {
+            margin: 2rem auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .review {
+            margin: 0 1rem;
+            min-width: 300px;
+            flex: 1;
+        }
+
+        .head-review {
+            margin: 1.75rem auto;
+            width: 150px;
+            height: 150px;
+        }
+
+        .head-review img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, .25);
+        }
+
+        .body-review {
+            background-color: rgb(238, 238, 238);
+            padding: 2.5rem;
+            box-shadow: 2px 2px 10px 3px rgb(225, 225, 225);
+        }
+
+        .name-review {
+            font-size: 1.5rem;
+            color: rgb(50, 50, 50);
+            margin-bottom: .25rem;
+        }
+
+        .rating {
+            color: rgb(253, 180, 42);
+            margin: 1rem 0;
+        }
+
+        .desc-review {
+            line-height: 1.5rem;
+            letter-spacing: 1px;
+            color: #3D2B1F;
+        }
+
+        @media (max-width: 678px) {
+            .review {
+                margin-top: 1.5rem;
+            }
+        }
+
+        .rev-section .btn {
+            padding: 10px 40px;
+            color: white;
+            cursor: pointer;
+            left: 45%;
+            right: 50%;
+            z-index: 0;
+            border-radius: 12px;
+            background: #3D2B1F;
+            border: 3px solid white;
+        }
+
+        .rev-section .btn:hover {
+            color: #3D2B1F;
+            background-color: white;
+        }
+
+        .back-to-top {
+            background: white;
+            position: fixed;
+            bottom: 16px;
+            right: 32px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: brown;
+            text-decoration: none;
+            opacity: 0;
+            pointer-events: none;
+            transition: all .4s;
+        }
+
+        .back-to-top.active {
+            bottom: 32px;
+            pointer-events: auto;
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem;
+            }
+
+            .logo img {
+                width: 100px;
+            }
+
+            .menu {
+                flex-direction: column;
+                width: 100%;
+                display: none;
+            }
+
+            .menu li {
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            .bars {
+                display: block;
+            }
+
+            .menu.active {
+                display: flex;
+            }
+
+            .row .video-container video {
+                width: 90%;
+                left: 5%;
+                top: 20%;
+            }
+
+            .row .video-container h3 {
+                left: 5%;
+                top: 50%;
+                width: 90%;
+            }
+
+            .content1 {
+                left: 5%;
+                top: 60%;
+                width: 90%;
+                grid-template-columns: 1fr;
+            }
+
+            .about-left {
+                text-align: center;
+                align-items: center;
+            }
+		}
+    </style>
+</head>
+
+<body>
+
+	<header>
+		<nav>
+			<div class = "logo">
+				<img src = "images/logo.png" alt = "Logo">
+			</div>
+			
+			<ul class = "menu">
+				<li><a href = "index.html"> Home </a></li>
+				<li><a href = "about_me.html"> About Me </a></li>
+				<li><a href = "education.html"> Education </a></li>
+				<li><a href = "inspiration.html"> Inspiration </a></li>
+				<li><a href = "gallery.html"> My Gallery </a></li>
+			</ul>
+			
+			<div class = "bars">
+				<i class = "ri-menu-2-fill"></i>
+			</div>
+		</nav>
+	
+		<div class = "content">
+			<h1> ABOUT HUMAIRA </h1>
+		</div>
+		
+		<section class = "section1">
+			<div class = "row">
+			
+				<div class = "video-container">
+					<video src = "images/myvideo.mov" loop autoplay muted></video>
+					<h3> Who am i? </h3>
+				</div>
+				
+				<div class = "content1">
+					<div class = "about-left">
+						<h1><i> "How you love yourself is how you teach others to love you." </i></h1>
+						<p> &nbsp; </p>
+						<p> Assalamualaikum and Hello... </p>
+						<p> I am Nur Batrisyia Humaira, from Petaling Jaya, Selangor. I am currently in my final semester studying Information Management at UiTM Rembau. </p>
+						<p> I enjoy singing and baking, and I love exploring new things. Being the second of five siblings has taught me to be responsible and flexible. </p>
+						<p> I am excited to start my career soon and see where life takes me! </p>
+						<h3><b> Humaira Haizzam </b></h3>
+						<img src = "images/signature.png" alt = "Signature">
+						<div class = "button">
+							<li><a href = "contact_me.html"> Contact Me </a></li>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</section>
+		
+		<section class = "section2">
+			<h3> MY HOBBY </h3>
+		
+			<div class = "slideshow-container">
+				<div class = "mySlides fade">
+					<div class = "numbertext"> 1 / 4 </div>
+					<img src = "images/hobby1.jpeg" alt = "Karaoke">
+					<h1> Karaoke </h1>
+					<div class = "text"> I love karaoke because it’s the perfect mix of fun, music, and memories. Singing my heart out, no matter how it sounds, always makes me feel alive! </div>
+				</div>
+			
+				<div class = "mySlides fade">
+					<div class = "numbertext"> 2 / 4 </div>
+					<img src = "images/hobby2.jpeg" alt = "Cooking">
+					<h1> Cooking </h1>
+					<div class = "text"> Cooking is where creativity meets comfort and a way to explore flavors, unwind, and share love through every dish I make. </div>
+				</div>
+				
+				<div class = "mySlides fade">
+					<div class = "numbertext"> 3 / 4 </div>
+					<img src = "images/hobby3.jpeg" alt = "Baking">
+					<h1> Baking </h1>
+					<div class = "text"> Baking allows me to explore my creativity, unwind from daily stresses, and find joy in crafting something special. It’s about the process, the aroma filling the kitchen, and the satisfaction of seeing the finished product. </div>
+				</div>
+				
+				<div class = "mySlides fade">
+					<div class = "numbertext"> 4 / 4 </div>
+					<img src = "images/hobby4.jpeg" alt = "Sleeping">
+					<h1> Sleeping </h1>
+					<div class = "text"> Sleeping is my time to recharge, rest, and reset. It’s the perfect way to unwind and refresh for the day ahead. </div>
+				</div>
+			
+				<a class = "prev" onclick = "plusSlides(-1)">&#10094;</a>
+				<a class = "next" onclick = "plusSlides(1)">&#10095;</a>
+			</div>
+			
+			<br>
+			
+			<div style = "text-align:center">
+				<span class = "dot" onclick = "currentSlide(1)"></span>
+				<span class = "dot" onclick = "currentSlide(2)"></span>
+				<span class = "dot" onclick = "currentSlide(3)"></span>
+				<span class = "dot" onclick = "currentSlide(4)"></span>
+			</div>
+			
+			<script>
+				let slideIndex = 1;
+				showSlides(slideIndex);
+
+				function plusSlides(n) {
+				  showSlides(slideIndex += n);
+				}
+
+				function currentSlide(n) {
+				  showSlides(slideIndex = n);
+				}
+
+				function showSlides(n) {
+					let i;
+					let slides = document.getElementsByClassName("mySlides");
+					let dots = document.getElementsByClassName("dot");
+					if (n > slides.length) {slideIndex = 1}
+					if (n < 1) {slideIndex = slides.length}
+					for (i = 0; i < slides.length; i++) {
+						slides[i].style.display = "none";  
+					}
+					for (i = 0; i < dots.length; i++) {
+						dots[i].className = dots[i].className.replace("active", "");
+					}
+					slides[slideIndex-1].style.display = "block";
+					dots[slideIndex-1].className += " active";
+				}
+			</script>
+			
+			<script>
+				const bars = document.querySelector('.bars');
+				const menu = document.querySelector('.menu');
+
+				bars.addEventListener('click', () => {
+					menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+				});
+			</script>
+		
+			<div class = "button">
+				<a href = "#" class = "btn"> Back Up </a>
+			</div>	
+		</section>
+		
+		<section class = "section3">
+			<div class = "row">
+			
+				<div class = "image-container3">
+					<img src = "images/myskill.jpeg" alt = "My Skills"></img>
+					<h3> My Skills </h3>
+				</div>
+				
+				<div class = "skills-section">
+					<div class = "what"> ACADEMIC SKILLS </div>
+					<div class = "skill-container">
+						<div class = "skill s1 load"><span> 65% </span></div>
+					</div>
+						
+					<div class = "what"> INTERPERSONAL SKILLS </div>
+					<div class = "skill-container">
+						<div class = "skill s2 load"><span> 70% </span></div>
+					</div>
+					
+					<div class = "what"> LEADERSHIP AND MANAGEMENT SKILLS </div>
+					<div class = "skill-container">
+						<div class = "skill s3 load"><span> 85% </span></div>
+					</div>
+					
+					<div class = "what"> TECHNICAL SKILLS </div>
+					<div class = "skill-container">
+						<div class = "skill s4 load"><span> 80% </span></div>
+					</div>
+					
+					<div class = "what"> PERSONAL DEVELOPMENT SKILLS </div>
+					<div class = "skill-container">
+						<div class = "skill s5 load"><span> 50% </span></div>
+					</div>
+					
+					<div class = "what"> ENTERTAINMENT SKILLS </div>
+					<div class = "skill-container">
+						<div class = "skill s6 load"><span> 60.7% </span></div>
+					</div>
+				</div>
+				
+				<div class = "button">
+					<a href = "#" class = "btn"> Back Up </a>
+				</div>
+			
+			</div>
+		</section>
+		
+		<div class = "rev-section">
+			<h2 class = "glow"> Me, Through Their Lens </h2>
+			<p class = "note"> What I have learned from hearing their thoughts and how it is helped me grow. </p>
+
+			<div class = "reviews">
+			
+				<div class = "review">
+					<div class = "head-review">
+						<img src = "images/hani.jpg" alt = "Nurul Hani">
+					</div>
+					
+					<div class = "body-review">
+						<div class = "name-review"><b> Nurul Hani </b></div>
+						<div class = "rating">
+							<span class = "fas fa-star checked"></span>
+							<span class = "fas fa-star checked"></span>
+							<span class = "fas fa-star checked"></span>
+							<span class = "fas fa-star checked"></span>
+							<span class = "fas fa-star checked"></span>
+						</div>
+						<div class = "desc-review"> "She is a creative individual with approachable personality. Her dedication to her passions in academics or personal growth, reflects her drive for excellence." </div>
+					</div>
+				</div>
+				
+				<div class = "review">
+					<div class = "head-review">
+						<img src = "images/juliza.jpg" alt = "Juliza Ali">
+					</div>
+					
+					<div class = "body-review">
+						<div class = "name-review"><b> Juliza Ali </b></div>
+						<div class = "rating">
+							<i class = "fas fa-star"></i>
+							<i class = "fas fa-star"></i>
+							<i class = "fas fa-star"></i>
+							<i class = "fas fa-star"></i>
+							<i class = "fas fa-star-half"></i>
+						</div>
+						<div class = "desc-review"> "Humaira is a dazzling firework of beauty, ambition, and energy. She works harder than anyone, shines bright in everything she does, and brings fun wherever she goes." </div>
+					</div>
+				</div>
+				
+				<div class = "review">
+					<div class = "head-review">
+						<img src = "images/nina.jpg" alt = "Siti Zuhazriana">
+					</div>
+					
+					<div class = "body-review">
+						<div class = "name-review"><b> Siti Zuhazriana </b></div>
+						<div class = "rating">
+							<i class = "fas fa-star"></i>
+							<i class = "fas fa-star"></i>
+							<i class = "fas fa-star"></i>
+							<i class = "fas fa-star"></i>
+							<i class = "fas fa-star"></i>
+						</div>
+						<div class = "desc-review"> "She’s beautiful  inside and out,  inspiring others with her kind heart. Her confidence shines, and as a loyal friend, she’s always there to listen and support." </div>
+					</div>
+				</div>
+				
+			</div>
+			
+			<p> &nbsp; </p>
+			<a href = "#" class = "btn"> Back Up </a>
+
+		</div>
+		
+	</header>
+	
+</body>
+
+</html>
