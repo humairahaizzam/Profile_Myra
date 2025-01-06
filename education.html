@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Education </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            list-style: none;
+            text-decoration: none;
+            font-family: 'Poppins';
+            scroll-behavior: smooth;
+        }
+
+        body {
+            overflow-x: hidden;
+            background-color: #7F6244;
+        }
+
+        header {
+            width: 100%;
+            padding: 80px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            height: 70px;
+            padding: 0 3%;
+            border-radius: 50px;
+            border: 4px solid #3D2B1F;
+            position: fixed;
+            top: 3%;
+            left: 10%;
+            background-color: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(5px);
+            z-index: 100;
+        }
+
+        .logo img {
+            width: 100px;
+            height: auto;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+        }
+
+        .menu li a {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #7F6244;
+            transition: 0.3s;
+        }
+
+        .menu li a:hover {
+            color: white;
+        }
+
+        .bars {
+            display: none;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        .content1 {
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 40px;
+            top: 1%;
+            position: relative;
+            margin: 40px 0;
+            color: #3D2B1F;
+            background-color: transparent;
+        }
+
+        h1::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 3px;
+            background-color: #EFDECD;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: animate 3s linear infinite;
+        }
+
+        @keyframes animate {
+            0% {
+                width: 10px;
+            }
+
+            50% {
+                width: 530px;
+            }
+
+            100% {
+                width: 10px;
+            }
+        }
+
+        .school_type {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .school {
+            width: 325px;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+        }
+
+        .school img {
+            width: 100%;
+            height: auto;
+        }
+
+        .school_content {
+            padding: 16px;
+        }
+
+        .school_content h3 {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .school_content h2 {
+            color: black;
+            font-size: 15px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+            text-decoration: underline;
+        }
+
+        .school_content .button {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #3D2B1F;
+            text-decoration: none;
+            border-radius: 20px;
+            margin-top: 16px;
+            color: white;
+        }
+
+        .school_content .button:hover {
+            background-color: #937A62;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem;
+            }
+
+            .menu {
+                flex-direction: column;
+                width: 100%;
+                display: none;
+            }
+
+            .bars {
+                display: block;
+            }
+
+            .school_type {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content1 h1 {
+                font-size: 30px;
+            }
+
+            .logo img {
+                width: 80px;
+            }
+
+            nav {
+                width: 90%;
+                left: 5%;
+            }
+
+            .school {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo">
+            </div>
+
+            <ul class="menu">
+                <li><a href="index.html"> Home </a></li>
+                <li><a href="about_me.html"> About Me </a></li>
+                <li><a href="education.html"> Education </a></li>
+                <li><a href="inspiration.html"> Inspiration </a></li>
+                <li><a href="gallery.html"> My Gallery </a></li>
+            </ul>
+
+            <div class="bars">
+                <i class="ri-menu-2-fill"></i>
+            </div>
+        </nav>
+
+        <div class="content1">
+            <h1> MY EDUCATION HISTORY </h1>
+        </div>
+
+        <div class="school_type">
+
+            <div class="school">
+                <img src="images/kindergarten.jpg" alt="Kindergarten">
+                <div class="school_content">
+                    <h3> Kindergarten </h3>
+                    <h2> Tadika Anjung Didik </h2>
+                    <p> &nbsp; </p>
+                    <p> My education started at Tadika Anjung Didik when I was 6 years old as I did not have the chance to attend earlier. During my time there, I learned basic reading, writing, and math skills, and it prepared me well for primary school. </p>
+                    <a href="https://anjungdidik.blogspot.com/p/our-school.html" class="button"> Know More </a>
+                </div>
+            </div>
+
+            <div class="school">
+                <img src="images/SKDD2.jpg" alt="Primary School">
+                <div class="school_content">
+                    <h3> Primary School </h3>
+                    <h2> Sekolah Kebangsaan Damansara Damai 2 </h2>
+                    <p> I joined many co-curricular activities and was proud to be named the Best Student, which encouraged me to keep working hard and growing both in academics and outside the classroom. </p>
+                    <a href="https://sites.google.com/view/kurikulum-skdd2/utama" class="button"> Know More </a>
+                </div>
+            </div>
+
+            <div class="school">
+                <img src="images/SMKDD1.jpg" alt="Secondary School">
+                <div class="school_content">
+                    <h3> Secondary School </h3>
+                    <h2> Sekolah Menengah Kebangsaan Damansara Damai 1 </h2>
+                    <p> During my time here, I prepared for and attended important examinations, including PT3 and SPM. These exams were key milestones in my education that helped me assess my academic and shape my future educational. </p>
+                    <a href="https://sites.google.com/moe-dl.edu.my/smkdd1" class="button"> Know More </a>
+                </div>
+            </div>
+
+            <div class="school">
+                <img src="images/UiTM.jpg" alt="University">
+                <div class="school_content">
+                    <h3> University </h3>
+                    <h2> UiTM Cawangan Negeri Sembilan Kampus Rembau </h2>
+                    <p> I am pursuing a diploma in Information Management. This semester marks the final phase of my diploma. I am excited about the opportunities ahead and the skills I have developed to make a positive impact in the field. </p>
+                    <a href="https://nsembilan.uitm.edu.my/rembau/" class="button"> Know More </a>
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+
+    <script>
+        const bars = document.querySelector('.bars');
+        const menu = document.querySelector('.menu');
+
+        bars.addEventListener('click', () => {
+            menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+
+</body>
+
+</html>
